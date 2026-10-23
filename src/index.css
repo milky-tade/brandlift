@@ -1,0 +1,382 @@
+/* =====================================================================
+   NOIR STUDIO DESIGN SYSTEM — PTGR.CH SWISS CORPORATE AESTHETIC
+   Aesthetic: Swiss Executive Navy, Deep Midnight, Crimson Accent,
+              Pill Geometry, Ultra-Clean Typography & Modern Contrast.
+   ===================================================================== */
+
+:root {
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* PTGR Signature Palette */
+  --ptgr-navy-deep: #0B1B30;
+  --ptgr-navy-dark: #0E2744;
+  --ptgr-navy-primary: #163962;
+  --ptgr-navy-medium: #1D4B7F;
+  --ptgr-navy-light: #2A64A4;
+  --ptgr-crimson: #8A1515;
+  --ptgr-crimson-hover: #A31818;
+  --ptgr-crimson-glow: rgba(138, 21, 21, 0.35);
+
+  /* Functional Accents */
+  --accent-primary: var(--ptgr-crimson);
+  --accent-hover: var(--ptgr-crimson-hover);
+  --accent-navy: var(--ptgr-navy-primary);
+  --accent-glow: var(--ptgr-crimson-glow);
+
+  /* PTGR Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-2xl: 44px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ================= DARK THEME (PTGR EXECUTIVE MIDNIGHT) ================= */
+:root,
+[data-theme='dark'] {
+  --color-scheme: dark;
+
+  --bg-canvas: #081424;
+  --bg-hero: linear-gradient(180deg, #071220 0%, #0B1B30 60%, #163962 100%);
+  --bg-surface: #0E223B;
+  --bg-surface-elevated: #132E4F;
+  --bg-surface-hover: #193B64;
+  --bg-card: #0F243E;
+  --bg-card-border: rgba(255, 255, 255, 0.12);
+  --bg-pill-dock: rgba(255, 255, 255, 0.08);
+
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.18);
+  --border-highlight: rgba(255, 255, 255, 0.3);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #8FA4BF;
+  --text-inverse: #0B1B30;
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 30px rgba(7, 18, 32, 0.55);
+  --shadow-lg: 0 20px 50px rgba(7, 18, 32, 0.7);
+
+  --nav-backdrop: rgba(11, 27, 48, 0.88);
+}
+
+/* ================= LIGHT THEME (PTGR CRISP SWISS SLATE) ================= */
+[data-theme='light'] {
+  --color-scheme: light;
+
+  --bg-canvas: #F4F7FB;
+  --bg-hero: linear-gradient(180deg, #0B1B30 0%, #163962 100%); /* PTGR hero remains high-impact navy */
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #EBF1F8;
+  --bg-surface-hover: #E2EAF3;
+  --bg-card: #FFFFFF;
+  --bg-card-border: rgba(22, 57, 98, 0.1);
+  --bg-pill-dock: #E6EEF7;
+
+  --border-subtle: rgba(22, 57, 98, 0.09);
+  --border-medium: rgba(22, 57, 98, 0.16);
+  --border-highlight: rgba(22, 57, 98, 0.3);
+
+  --text-primary: #0F233C;
+  --text-secondary: #425874;
+  --text-muted: #6B829E;
+  --text-inverse: #FFFFFF;
+
+  --shadow-sm: 0 2px 8px rgba(22, 57, 98, 0.06);
+  --shadow-md: 0 12px 32px rgba(22, 57, 98, 0.1);
+  --shadow-lg: 0 24px 60px rgba(22, 57, 98, 0.14);
+
+  --nav-backdrop: rgba(11, 27, 48, 0.92);
+}
+
+/* ================= GLOBAL RESETS & BASE ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  color-scheme: var(--color-scheme);
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--ptgr-crimson);
+  outline-offset: 3px;
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+img, svg, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ================= LAYOUT CONTAINERS ================= */
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* ================= SECTION SYSTEM ================= */
+.section {
+  padding-top: clamp(4.5rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: rgba(22, 57, 98, 0.12);
+  border: 1px solid rgba(22, 57, 98, 0.25);
+  color: var(--ptgr-navy-primary);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.1rem;
+}
+
+[data-theme='dark'] .section-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+}
+
+.section-title {
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+.section-header.text-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================= PTGR PILL BUTTONS ================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+/* Primary Crimson Button (PTGR "Start Your Journey" style) */
+.btn-primary {
+  background: var(--ptgr-crimson);
+  color: #FFFFFF;
+  box-shadow: 0 4px 20px var(--ptgr-crimson-glow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--ptgr-crimson-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--ptgr-crimson-glow);
+}
+
+/* Secondary Navy Pill Button */
+.btn-secondary {
+  background: var(--ptgr-navy-primary);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+  background: var(--ptgr-navy-medium);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(22, 57, 98, 0.35);
+}
+
+/* Outline Pill Button with Translucent Border */
+.btn-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-medium);
+}
+
+.btn-outline-dark:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--ptgr-navy-primary);
+  color: var(--ptgr-navy-primary);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp Action Button */
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: #1EBE5D;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.82rem;
+}
+
+.btn-lg {
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+}
+
+/* ================= CARDS & SURFACES ================= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.card:hover {
+  border-color: var(--border-highlight);
+  box-shadow: var(--shadow-md);
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
