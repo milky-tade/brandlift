@@ -355,7 +355,7 @@ export const ProjectMediaModal: React.FC<ProjectMediaModalProps> = ({ project, o
               className="btn btn-whatsapp"
             >
               <MessageSquare size={16} />
-              <span>Discuss on WhatsApp</span>
+              <span>Contact On WhatsApp</span>
             </a>
           </div>
         </div>

@@ -136,7 +136,7 @@ export const Hero: React.FC<HeroProps> = ({ onExploreWork }) => {
               style={{ minWidth: '220px' }}
             >
               <MessageSquare size={18} />
-              <span>START YOUR PROJECT</span>
+              <span>Contact On WhatsApp</span>
             </a>
 
             {/* Secondary Outline Pill with Smooth Scroll */}

@@ -104,7 +104,7 @@ export const FinalCtaSection: React.FC = () => {
               }}
             >
               <MessageSquare size={19} />
-              <span>START ON WHATSAPP</span>
+              <span>Contact On WhatsApp</span>
               <ArrowUpRight size={18} />
             </a>
           </div>

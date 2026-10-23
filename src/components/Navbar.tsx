@@ -192,7 +192,7 @@ export const Navbar: React.FC = () => {
               {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
             </button>
 
-            {/* PTGR Signature Pill CTA: Crimson "Start Project" */}
+            {/* PTGR Signature Pill CTA: Crimson "Contact On WhatsApp" */}
             <a
               href={whatsAppUrl}
               target="_blank"
@@ -204,7 +204,7 @@ export const Navbar: React.FC = () => {
               id="nav-cta-btn"
             >
               <MessageSquare size={15} />
-              <span>START PROJECT</span>
+              <span>Contact On WhatsApp</span>
             </a>
             <style>{`
               @media (min-width: 640px) {
@@ -325,7 +325,7 @@ export const Navbar: React.FC = () => {
               style={{ marginTop: '0.5rem', width: '100%' }}
             >
               <MessageSquare size={18} />
-              <span>START PROJECT (WHATSAPP)</span>
+              <span>Contact On WhatsApp</span>
             </a>
           </div>
         )}
